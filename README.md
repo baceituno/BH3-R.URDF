@@ -1,2 +1,1 @@
-# BH3-R.URDF
-# BH3-R.URDF
+# URDF Model for a BH3-R hexapod robot
