@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/base_link.STL" />
+          filename="meshes/base_link.obj" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/base_link.STL" />
+          filename="meshes/base_link.obj" />
       </geometry>
     </collision>
   </link>
@@ -62,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link1.STL" />
+          filename="meshes/Pata1_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -76,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link1.STL" />
+          filename="meshes/Pata1_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -93,14 +93,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata1_Motor1"/>
     <actuator name="Pata1_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
   <link
@@ -125,7 +128,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link2.STL" />
+          filename="meshes/Pata1_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -139,7 +142,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link2.STL" />
+          filename="meshes/Pata1_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -156,14 +159,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata1_Motor2"/>
     <actuator name="Pata1_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata1_Link3">
@@ -187,7 +193,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link3.STL" />
+          filename="meshes/Pata1_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -201,13 +207,19 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata1_Link3.STL" />
+          filename="meshes/Pata1_Link3.obj" />
       </geometry>
     </collision>
     <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 -0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 -0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
   </link>
@@ -224,17 +236,20 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata1_Motor3"/>
     <actuator name="Pata1_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
-  <frame link="Pata1_link3" name="Pata1_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata1_link3" name="Pata1_Pie" xyz="0 -0.107 0"/>
 
   <link
     name="Pata2_Link1">
@@ -258,7 +273,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link1.STL" />
+          filename="meshes/Pata2_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -272,7 +287,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link1.STL" />
+          filename="meshes/Pata2_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -289,14 +304,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata2_Motor1"/>
     <actuator name="Pata2_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata2_Link2">
@@ -320,7 +338,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link2.STL" />
+          filename="meshes/Pata2_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -334,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link2.STL" />
+          filename="meshes/Pata2_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -351,14 +369,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata2_Motor2"/>
     <actuator name="Pata2_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata2_Link3">
@@ -382,7 +403,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link3.STL" />
+          filename="meshes/Pata2_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -396,13 +417,19 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata2_Link3.STL" />
+          filename="meshes/Pata2_Link3.obj" />
       </geometry>
     </collision>
     <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 -0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 -0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
   </link>
@@ -419,16 +446,19 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata2_Motor3"/>
     <actuator name="Pata2_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
-  <frame link="Pata2_link3" name="Pata2_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata2_link3" name="Pata2_Pie" xyz="0 -0.107 0"/>
   <link
     name="Pata3_Link1">
     <inertial>
@@ -451,7 +481,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link1.STL" />
+          filename="meshes/Pata3_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -465,7 +495,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link1.STL" />
+          filename="meshes/Pata3_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -482,14 +512,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata3_Motor1"/>
     <actuator name="Pata3_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata3_Link2">
@@ -513,7 +546,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link2.STL" />
+          filename="meshes/Pata3_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -527,7 +560,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link2.STL" />
+          filename="meshes/Pata3_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -544,14 +577,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata3_Motor2"/>
     <actuator name="Pata3_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata3_Link3">
@@ -572,10 +608,10 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 3.1416 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link3.STL" />
+          filename="meshes/Pata3_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -586,16 +622,22 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 3.1416 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata3_Link3.STL" />
+          filename="meshes/Pata3_Link3.obj" />
       </geometry>
     </collision>
     <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
   </link>
@@ -604,7 +646,7 @@
     type="revolute">
     <origin
       xyz="-0.058928 0 0"
-      rpy="-3.1416 1.583E-15 0" />
+      rpy="3.1416 3.1416 0" />
     <parent
       link="Pata3_Link2" />
     <child
@@ -612,17 +654,20 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata3_Motor3"/>
     <actuator name="Pata3_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
-  <frame link="Pata3_link3" name="Pata3_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata3_link3" name="Pata3_Pie" xyz="0 0.107 0"/>
 
   <link
     name="Pata4_Link1">
@@ -646,7 +691,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link1.STL" />
+          filename="meshes/Pata4_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -660,7 +705,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link1.STL" />
+          filename="meshes/Pata4_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -677,14 +722,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata4_Motor1"/>
     <actuator name="Pata4_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata4_Link2">
@@ -708,7 +756,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link2.STL" />
+          filename="meshes/Pata4_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -722,7 +770,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link2.STL" />
+          filename="meshes/Pata4_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -739,14 +787,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata4_Motor2"/>
     <actuator name="Pata4_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata4_Link3">
@@ -770,7 +821,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link3.STL" />
+          filename="meshes/Pata4_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -784,13 +835,19 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata4_Link3.STL" />
+          filename="meshes/Pata4_Link3.obj" />
       </geometry>
     </collision>
     <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 -0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 -0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
   </link>
@@ -807,17 +864,20 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata4_Motor3"/>
     <actuator name="Pata4_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
-  <frame link="Pata4_link3" name="Pata4_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata4_link3" name="Pata4_Pie" xyz="0 -0.107 0"/>
 
   <link
     name="Pata5_Link1">
@@ -841,7 +901,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link1.STL" />
+          filename="meshes/Pata5_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -855,7 +915,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link1.STL" />
+          filename="meshes/Pata5_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -872,14 +932,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata5_Motor1"/>
     <actuator name="Pata5_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata5_Link2">
@@ -903,7 +966,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link2.STL" />
+          filename="meshes/Pata5_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -917,7 +980,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link2.STL" />
+          filename="meshes/Pata5_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -934,14 +997,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata5_Motor2"/>
     <actuator name="Pata5_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata5_Link3">
@@ -965,7 +1031,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link3.STL" />
+          filename="meshes/Pata5_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -979,12 +1045,18 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata5_Link3.STL" />
+          filename="meshes/Pata5_Link3.obj" />
       </geometry>
       <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 -0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 -0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
     </collision>
@@ -1002,17 +1074,20 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata5_Motor3"/>
     <actuator name="Pata5_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
-  <frame link="Pata5_link3" name="Pata5_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata5_link3" name="Pata5_Pie" xyz="0 -0.107 0"/>
   
   <link
     name="Pata6_Link1">
@@ -1036,7 +1111,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link1.STL" />
+          filename="meshes/Pata6_Link1.obj" />
       </geometry>
       <material
         name="">
@@ -1050,7 +1125,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link1.STL" />
+          filename="meshes/Pata6_Link1.obj" />
       </geometry>
     </collision>
   </link>
@@ -1067,14 +1142,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52" 
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58" 
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata6_Motor1"/>
     <actuator name="Pata6_Motor1"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata6_Link2">
@@ -1098,7 +1176,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link2.STL" />
+          filename="meshes/Pata6_Link2.obj" />
       </geometry>
       <material
         name="">
@@ -1112,7 +1190,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link2.STL" />
+          filename="meshes/Pata6_Link2.obj" />
       </geometry>
     </collision>
   </link>
@@ -1129,14 +1207,17 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-1.58"
+      upper="0.79"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata6_Motor2"/>
     <actuator name="Pata6_Motor2"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   <link
     name="Pata6_Link3">
@@ -1160,7 +1241,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link3.STL" />
+          filename="meshes/Pata6_Link3.obj" />
       </geometry>
       <material
         name="">
@@ -1174,13 +1255,19 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/Pata6_Link3.STL" />
+          filename="meshes/Pata6_Link3.obj" />
       </geometry>
     </collision>
     <collision group="feet">
-      <origin xyz="0 -0.123 0"/>
+      <origin xyz="0 -0.107 0"/>
       <geometry>
-        <sphere radius="0.0103"/>
+        <sphere radius="0.0001"/>
+      </geometry>
+    </collision>
+    <collision group="feet">
+      <origin xyz="0 -0.107 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
       </geometry>
     </collision>
   </link>
@@ -1197,16 +1284,19 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="0"
-      lower="-0.52"
-      upper="0.52"
-      velocity="0.19" />
+      effort="360"
+      lower="-0.79"
+      upper="1.58"
+      velocity="12" />
+    <dynamics damping="0.1" friction="0"/>
+    <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
   </joint>
   <transmission type="SimpleTransmission">
     <joint name="Pata6_Motor3"/>
     <actuator name="Pata6_Motor3"/>
+    <mechanicalReduction>1</mechanicalReduction>
   </transmission>
   
-  <frame link="Pata6_link3" name="Pata6_Pie" xyz="0 -0.123 0"/>
+  <frame link="Pata6_link3" name="Pata6_Pie" xyz="0 -0.107 0"/>
 
 </robot>
